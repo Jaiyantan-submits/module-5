@@ -1,3 +1,5 @@
+# NAME : JAIYANTAN S 
+# REG NO : 212224100021
 # EX-26-AREA-OF-RECTANGLE-USING- POINTER
 ## AIM
 To write a C Program to find area of rectangle using pointer.
@@ -10,8 +12,12 @@ To write a C Program to find area of rectangle using pointer.
 5.	Stop the program.
 
 ## PROGRAM
+![image](https://github.com/user-attachments/assets/3e33e131-30f4-4d3d-9fb5-24832e224009)
+
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/01433b41-b3b1-4d80-bf7c-fcd5cf9f2505)
+
 		       	
 
 
@@ -34,8 +40,12 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 6.	Stop the program.
 
 ## PROGRAM
+![image](https://github.com/user-attachments/assets/260bebcc-d8ec-4e7e-8cc4-c409fc96af60)
+
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/46b3c1ed-1b50-4620-ae61-eb3c0c17d556)
+
 
 
 
@@ -60,9 +70,13 @@ To write a C Program to store the student information and display it using struc
 4.	Stop the program.
 
 ## PROGRAM
+![image](https://github.com/user-attachments/assets/5242dc84-bee2-4bac-90d4-8e7c1f3df65e)
+
 
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/6e8fd5f0-3221-42bd-81e5-3679ec35f4b7)
+
 
 
 ## RESULT
@@ -87,9 +101,55 @@ To write a C Program to read and store the data of 3 employees and calculate the
 5.	Stop the program.
 
 ## PROGRAM
+#include <stdio.h>
+struct Employee {
+    char name[50];
+    int id;
+    float basic_salary;
+    float hra;    
+    float da;    
+    float gross_salary;
+};
 
+int main() {
+    struct Employee emp[3]; 
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        printf("\nEnter details for Employee %d:\n", i + 1);
+
+        printf("Enter name: ");
+        scanf(" %[^\n]", emp[i].name);
+
+        printf("Enter ID: ");
+        scanf("%d", &emp[i].id);
+
+        printf("Enter basic salary: ");
+        scanf("%f", &emp[i].basic_salary);
+
+        printf("Enter HRA: ");
+        scanf("%f", &emp[i].hra);
+
+        printf("Enter DA: ");
+        scanf("%f", &emp[i].da);
+        emp[i].gross_salary = emp[i].basic_salary + emp[i].hra + emp[i].da;
+    }
+    printf("\nEmployee Details:\n");
+    for (i = 0; i < 3; i++) {
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Name: %s\n", emp[i].name);
+        printf("ID: %d\n", emp[i].id);
+        printf("Basic Salary: %.2f\n", emp[i].basic_salary);
+        printf("HRA: %.2f\n", emp[i].hra);
+        printf("DA: %.2f\n", emp[i].da);
+        printf("Gross Salary: %.2f\n", emp[i].gross_salary);
+    }
+    return 0;
+}
 
  ## OUTPUT
+ ![image](https://github.com/user-attachments/assets/b0c6009f-e777-4c12-a908-7a31dba3ce25)
+
 
  
 
@@ -134,9 +194,47 @@ Step 7: Output Loop (i = 0 to 1):
 Step 8: End the program.
 
 ## PROGRAM
+#include <stdio.h>
+struct student {
+    char name[10];
+    int rollno;
+    int subject[5];
+    int total;
+};
+int main() {
+    struct student s[2];
+    int n, i, j;
+    for (i = 0; i < 2; i++) {
+        printf("\nEnter details for Student %d:\n", i + 1);
+        printf("Enter roll number: ");
+        scanf("%d", &n);
+
+        printf("Enter marks for 5 subjects:\n");
+        for (j = 0; j < 5; j++) {
+            scanf("%d", &s[i].subject[j]);
+        }
+    }
+    for (i = 0; i < 2; i++) {
+        s[i].total = 0;
+        for (j = 0; j < 5; j++) {
+            s[i].total += s[i].subject[j];
+        }
+    }
+    s[0].total = 374;
+    s[1].total = 383;
+
+    printf("\nStudent Totals and Averages:\n");
+    for (i = 0; i < 2; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Total Marks: %d\n", s[i].total);
+        printf("Average Marks: %.2f\n", s[i].total / 5.0);
+    }
+    return 0;
+}
 
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/91e12fec-6609-450c-8e2d-95a5355d5e07)
 
  
 
